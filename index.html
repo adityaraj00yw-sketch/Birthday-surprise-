@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday My Dear Bhan</title>
+<style>
+body{margin:0;background:linear-gradient(135deg,#ffe0ed,#fff4d6);font-family:Georgia,serif;text-align:center;color:#9b285d;padding:25px}
+main{background:white;border-radius:25px;padding:25px;max-width:550px;margin:25px auto;box-shadow:0 8px 30px #d88}
+h1{font-size:36px;color:#d63384}
+p{font-size:19px;line-height:1.7}
+button{background:#d63384;color:white;border:0;border-radius:25px;padding:14px 22px;font-size:17px;margin:10px}
+</style>
+</head>
+<body>
+<main>
+<div style="font-size:55px">👑🎂🎀</div>
+<h1>Happy Birthday<br>My Dear Bhan!</h1>
+<h2>Our Little Princess ❤️</h2>
+<p>Aaj ka din bahut khaas hai, kyunki aaj hamari pyari chhoti bhan ka birthday hai! 🥳</p>
+<p>Meri dua hai ki tumhari zindagi hamesha khushiyon se bhari rahe. Tumhare har sapne poore hon aur har kadam par kamyabi mile.</p>
+<p>Hamesha khush rehna, khoob padhna, khoob aage badhna aur apne mummy-papa ka naam roshan karna.</p>
+<p>Bhagwan tumhe lambi umar, achhi sehat aur dher saari khushiyan de. 🧿</p>
+<h2>Lots of Love & Blessings! ❤️</h2>
+<p>🎉 Many Many Happy Returns of the Day! 🎉</p>
+<button onclick="play()">▶ Birthday Song</button>
+<div id="msg"></div>
+</main>
+<script>
+function play(){
+let c=new(window.AudioContext||window.webkitAudioContext)();
+let notes=[523,523,587,523,698,659,523,523,587,523,784,698];
+notes.forEach((n,i)=>{let o=c.createOscillator(),g=c.createGain();o.frequency.value=n;o.connect(g);g.connect(c.destination);let t=c.currentTime+i*.35;g.gain.setValueAtTime(.15,t);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.31)});
+document.getElementById('msg').innerText='🎶 Happy Birthday, little princess!';
+}
+</script>
+</body>
+</html>
